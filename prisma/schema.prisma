@@ -11,3 +11,23 @@ generator client {
 datasource db {
   provider = "mysql"
 }
+
+model Evento{
+  id        Int      @id @default(autoincrement())
+  nombre    String  @db.VarChar(255)
+  fecha     DateTime
+  lugar     String  @db.VarChar(150)
+  imagen    String? @db.VarChar(255)
+  valor     Int     @default(0)
+  personas  Persona[]
+}
+
+model Persona{
+  id        Int      @id @default(autoincrement())
+  nombre    String   @db.VarChar(100)
+  apellido  String   @db.VarChar(100)
+  email     String   @db.VarChar(255) @unique
+  eventoId   Int
+  eventos    Evento @relation(fields: [eventoId], references: [id])
+  @@index([eventoId])
+}

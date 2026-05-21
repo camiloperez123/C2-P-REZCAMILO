@@ -23,5 +23,5 @@ export const prisma: PrismaClient =
   globalForPrisma.__prisma ?? createPrismaClient()
 
 if (process.env.NODE_ENV !== 'production') {
-  globalForPrisma.__prisma == prisma
+  globalForPrisma.__prisma = prisma
 }

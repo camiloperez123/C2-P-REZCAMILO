@@ -51,7 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-
+  Evento: 'Evento',
+  Persona: 'Persona'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -68,4 +69,61 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const EventoScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  fecha: 'fecha',
+  lugar: 'lugar',
+  imagen: 'imagen',
+  valor: 'valor'
+} as const
+
+export type EventoScalarFieldEnum = (typeof EventoScalarFieldEnum)[keyof typeof EventoScalarFieldEnum]
+
+
+export const PersonaScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  apellido: 'apellido',
+  email: 'email',
+  eventoId: 'eventoId'
+} as const
+
+export type PersonaScalarFieldEnum = (typeof PersonaScalarFieldEnum)[keyof typeof PersonaScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const EventoOrderByRelevanceFieldEnum = {
+  nombre: 'nombre',
+  lugar: 'lugar',
+  imagen: 'imagen'
+} as const
+
+export type EventoOrderByRelevanceFieldEnum = (typeof EventoOrderByRelevanceFieldEnum)[keyof typeof EventoOrderByRelevanceFieldEnum]
+
+
+export const PersonaOrderByRelevanceFieldEnum = {
+  nombre: 'nombre',
+  apellido: 'apellido',
+  email: 'email'
+} as const
+
+export type PersonaOrderByRelevanceFieldEnum = (typeof PersonaOrderByRelevanceFieldEnum)[keyof typeof PersonaOrderByRelevanceFieldEnum]
 

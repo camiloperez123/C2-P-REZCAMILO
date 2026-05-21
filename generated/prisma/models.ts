@@ -8,4 +8,6 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/Evento.js'
+export type * from './models/Persona.js'
 export type * from './commonInputTypes.js'

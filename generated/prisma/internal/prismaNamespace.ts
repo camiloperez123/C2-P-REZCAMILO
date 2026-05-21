@@ -384,7 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-
+  Evento: 'Evento',
+  Persona: 'Persona'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -400,10 +401,143 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: never
+    modelProps: "evento" | "persona"
     txIsolationLevel: TransactionIsolationLevel
   }
-  model: {}
+  model: {
+    Evento: {
+      payload: Prisma.$EventoPayload<ExtArgs>
+      fields: Prisma.EventoFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EventoFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EventoFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>
+        }
+        findFirst: {
+          args: Prisma.EventoFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EventoFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>
+        }
+        findMany: {
+          args: Prisma.EventoFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>[]
+        }
+        create: {
+          args: Prisma.EventoCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>
+        }
+        createMany: {
+          args: Prisma.EventoCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.EventoDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>
+        }
+        update: {
+          args: Prisma.EventoUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>
+        }
+        deleteMany: {
+          args: Prisma.EventoDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EventoUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.EventoUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EventoPayload>
+        }
+        aggregate: {
+          args: Prisma.EventoAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEvento>
+        }
+        groupBy: {
+          args: Prisma.EventoGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EventoGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EventoCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EventoCountAggregateOutputType> | number
+        }
+      }
+    }
+    Persona: {
+      payload: Prisma.$PersonaPayload<ExtArgs>
+      fields: Prisma.PersonaFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PersonaFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PersonaFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>
+        }
+        findFirst: {
+          args: Prisma.PersonaFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PersonaFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>
+        }
+        findMany: {
+          args: Prisma.PersonaFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>[]
+        }
+        create: {
+          args: Prisma.PersonaCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>
+        }
+        createMany: {
+          args: Prisma.PersonaCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.PersonaDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>
+        }
+        update: {
+          args: Prisma.PersonaUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>
+        }
+        deleteMany: {
+          args: Prisma.PersonaDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PersonaUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.PersonaUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PersonaPayload>
+        }
+        aggregate: {
+          args: Prisma.PersonaAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePersona>
+        }
+        groupBy: {
+          args: Prisma.PersonaGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PersonaGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PersonaCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PersonaCountAggregateOutputType> | number
+        }
+      }
+    }
+  }
 } & {
   other: {
     payload: any
@@ -442,7 +576,95 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const EventoScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  fecha: 'fecha',
+  lugar: 'lugar',
+  imagen: 'imagen',
+  valor: 'valor'
+} as const
 
+export type EventoScalarFieldEnum = (typeof EventoScalarFieldEnum)[keyof typeof EventoScalarFieldEnum]
+
+
+export const PersonaScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  apellido: 'apellido',
+  email: 'email',
+  eventoId: 'eventoId'
+} as const
+
+export type PersonaScalarFieldEnum = (typeof PersonaScalarFieldEnum)[keyof typeof PersonaScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const EventoOrderByRelevanceFieldEnum = {
+  nombre: 'nombre',
+  lugar: 'lugar',
+  imagen: 'imagen'
+} as const
+
+export type EventoOrderByRelevanceFieldEnum = (typeof EventoOrderByRelevanceFieldEnum)[keyof typeof EventoOrderByRelevanceFieldEnum]
+
+
+export const PersonaOrderByRelevanceFieldEnum = {
+  nombre: 'nombre',
+  apellido: 'apellido',
+  email: 'email'
+} as const
+
+export type PersonaOrderByRelevanceFieldEnum = (typeof PersonaOrderByRelevanceFieldEnum)[keyof typeof PersonaOrderByRelevanceFieldEnum]
+
+
+
+/**
+ * Field references
+ */
+
+
+/**
+ * Reference to a field of type 'Int'
+ */
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+/**
+ * Reference to a field of type 'String'
+ */
+export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
 
 /**
  * Batch Payload for updateMany & deleteMany & createMany
@@ -553,7 +775,10 @@ export type PrismaClientOptions = ({
    */
   queryPlanCacheMaxSize?: number
 }
-export type GlobalOmitConfig = {}
+export type GlobalOmitConfig = {
+  evento?: Prisma.EventoOmit
+  persona?: Prisma.PersonaOmit
+}
 
 /* Types for Logging */
 export type LogLevel = 'info' | 'query' | 'warn' | 'error'

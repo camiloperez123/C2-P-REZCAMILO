@@ -73,3 +73,10 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+Nomenclatura de  commits:
+- feat: para nuevas funcionalidades
+- hotfix: para corrección de errores
+- docs: para cambios en la documentación
+- gen: para cambios generales que no encajan en las otras categorías

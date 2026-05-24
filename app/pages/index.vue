@@ -1,15 +1,14 @@
 <script setup lang="ts">
-const { data: eventos, pending, error } = await useFetch<any[]>('/api/eventos')
+const { data: eventos, pending, error } = await useFetch('/api/eventos')
 
 function formatFecha(fecha: string) {
-  if (!fecha) return 'Fecha no disponible'
+  if (!fecha) return ''
   return new Date(fecha).toLocaleString('es-CL', {
     day: 'numeric', month: 'long', year: 'numeric',
     hour: '2-digit', minute: '2-digit'
   })
 }
 </script>
-npm install typescript --save-dev
 <template>
   <div>
     <!-- Hero -->

@@ -1,0 +1,20 @@
+-- Insertar eventos de prueba
+INSERT INTO Evento (nombre, fecha, lugar, imagen, valor) VALUES
+('Festival de Invierno', '2024-12-15 18:00:00', 'Auditorio Central', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800', 0),
+('Workshop de IA', '2024-12-20 10:00:00', 'Laboratorio de Innovación', 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800', 5000),
+('Expo Arte Digital', '2024-12-18 14:00:00', 'Sala de Exposiciones', 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800', 0),
+('Hackathon Campus', '2024-12-22 09:00:00', 'Pabellón Tecnológico', 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800', 3000),
+('Networking Gala', '2024-12-30 19:00:00', 'Salón Dorado', 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800', 15000);
+
+-- Insertar personas de prueba
+INSERT INTO Persona (nombre, apellido, eventoId) VALUES
+('Juan', 'Pérez', 1),
+('María', 'González', 1),
+('Carlos', 'Rodríguez', 1),
+('Ana', 'Martínez', 2),
+('Pedro', 'López', 2),
+('Sofía', 'Sánchez', 3),
+('Diego', 'Torres', 3),
+('Valentina', 'Flores', 4),
+('Matías', 'Vargas', 1),
+('Camila', 'Muñoz', 5);

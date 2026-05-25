@@ -52,7 +52,7 @@ async function guardar() {
         <span class="text-2xl font-black text-violet-600">Smart Events</span>
         <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Admin Panel</p>
       </div>
-      <nav class="flex flex-col gap-2 flex-grow">
+      <nav class="flex flex-col gap-2 grow">
         <span class="flex items-center gap-3 bg-violet-600 text-white rounded-xl px-4 py-3 font-semibold text-sm">
           📅 Gestión de Eventos
         </span>
@@ -161,7 +161,7 @@ async function guardar() {
               <tr v-for="evento in eventos" :key="evento.id" class="hover:bg-gray-50 transition">
                 <td class="p-4">
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden shrink-0">
                       <img v-if="evento.imagen" :src="evento.imagen" class="w-full h-full object-cover" />
                       <div v-else class="w-full h-full flex items-center justify-center text-xl">📷</div>
                     </div>

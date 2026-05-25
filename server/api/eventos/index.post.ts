@@ -2,8 +2,7 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const { nombre, fecha, lugar, valor, imagen } = body
   if (!nombre || !fecha || !lugar) {
-    throw createError({ statusCode: 400, message: 'Datos incompletos' 
-   })
+    throw createError({ statusCode: 400, message: 'Datos incompletos del evento' })
   }
   
   return await prisma.evento.create({

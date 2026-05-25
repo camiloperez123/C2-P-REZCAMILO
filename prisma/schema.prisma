@@ -26,7 +26,6 @@ model Persona{
   id        Int      @id @default(autoincrement())
   nombre    String   @db.VarChar(100)
   apellido  String   @db.VarChar(100)
-  email     String   @db.VarChar(255) @unique
   eventoId   Int
   eventos    Evento @relation(fields: [eventoId], references: [id])
   @@index([eventoId])

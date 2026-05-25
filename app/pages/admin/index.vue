@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// No usar layout para esta página, ya que tiene su propio diseño de administración
+definePageMeta({
+  layout: false
+})
 const { data: eventos, refresh } = await useFetch('/api/eventos')
 
 const mostrarFormulario = ref(false)
@@ -47,23 +51,7 @@ async function guardar() {
   <div class="flex min-h-screen">
 
     <!-- Sidebar -->
-    <aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-indigo-50 border-r border-gray-200 p-6 gap-6 z-40">
-      <div>
-        <span class="text-2xl font-black text-violet-600">Smart Events</span>
-        <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Admin Panel</p>
-      </div>
-      <nav class="flex flex-col gap-2 grow">
-        <span class="flex items-center gap-3 bg-violet-600 text-white rounded-xl px-4 py-3 font-semibold text-sm">
-          📅 Gestión de Eventos
-        </span>
-        
-      </nav>
-      <div class="border-t border-gray-200 pt-4">
-        <NuxtLink to="/" class="flex items-center gap-3 text-gray-500 hover:text-violet-600 text-sm px-4 py-2">
-          ← Volver al sitio
-        </NuxtLink>
-      </div>
-    </aside>
+    <AdminSidebar />
 
     <!-- Main -->
     <main class="md:ml-64 flex-1 p-6 md:p-10 space-y-8">
@@ -126,7 +114,7 @@ async function guardar() {
           </div>
           <div class="flex flex-col gap-4">
             <p v-if="errorForm" class="text-red-500 text-sm bg-red-50 px-4 py-2 rounded-lg">{{ errorForm }}</p>
-            <p v-if="exitoForm" class="text-green-600 text-sm bg-green-50 px-4 py-2 rounded-lg">✅ Evento creado correctamente.</p>
+            <p v-if="exitoForm" class="text-green-600 text-sm bg-green-50 px-4 py-2 rounded-lg"><Icon name="mdi:check-circle" class="w-16 h-16 text-green-500" /> Evento creado correctamente.</p>
             <div class="flex justify-end gap-3 mt-auto">
               <button @click="mostrarFormulario = false"
                 class="px-6 py-3 border-2 border-indigo-600 text-indigo-600 rounded-xl font-bold hover:bg-indigo-50 transition">

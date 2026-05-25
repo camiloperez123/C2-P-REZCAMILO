@@ -98,7 +98,7 @@ async function registrar() {
             <Icon name="mdi:check-circle" class="text-green-500 w-16 h-16" />
             <h2 class="text-2xl font-bold text-gray-900">¡Inscripción exitosa!</h2>
             <p class="text-gray-500">Te has registrado en <strong>{{ evento.nombre }}</strong>.</p>
-            <NuxtLink to="/" class="mt-2 text-violet-600 font-semibold hover:underline">← Volver a eventos</NuxtLink>
+            <NuxtLink to="/" class="mt-2 text-violet-600 font-semibold hover:underline"><Icon name="mdi:arrow-left" class="w-4 h-4" /> Volver a eventos</NuxtLink>
           </div>
 
           <!-- Formulario -->

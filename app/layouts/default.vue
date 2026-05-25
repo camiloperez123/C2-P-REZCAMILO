@@ -29,8 +29,8 @@
                 <p class="text-sm text-gray-500">Universidad Técnica federico Santa Maria - Taller de Lenguaje de Programación</p>
             </div>
             <div class="flex flex-wrap justify-center gap-48 md:gap-20">
-                <a href="/app/pages/" class="text-sm text-gray-500 hover:text-violet-600 transition">Eventos</a>
-                <a href="#" class="text-sm text-gray-500 hover:text-violet-600 transition">Admin</a>
+                <NuxtLink to="/" class="text-sm text-gray-500 hover:text-violet-600 transition">Eventos</NuxtLink>
+                <NuxtLink to="/admin" class="text-sm text-gray-500 hover:text-violet-600 transition">Admin</NuxtLink>
             </div>
         </footer>
     </div>

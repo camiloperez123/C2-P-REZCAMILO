@@ -24,32 +24,14 @@ async function eliminar(personaId: number) {
   <div class="flex min-h-screen">
 
     <!-- Sidebar -->
-    <aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-indigo-50 border-r border-gray-200 p-6 gap-6 z-40">
-      <div>
-        <span class="text-2xl font-black text-violet-600">Smart Events</span>
-        <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Admin Panel</p>
-      </div>
-      <nav class="flex flex-col gap-2 border-t border-gray-200 pt-4">
-        <NuxtLink to="/admin" class="flex items-center gap-3 text-gray-600 hover:bg-white rounded-xl px-4 py-3 font-semibold text-sm transition-all">
-          📅 Gestión de Eventos
-        </NuxtLink>
-        <span class="flex items-center gap-3 bg-violet-600 text-white rounded-xl px-4 py-3 font-semibold text-sm">
-          👥 Ver Inscritos
-        </span>
-      </nav>
-      <div class="border-t border-gray-200 pt-4">
-        <NuxtLink to="/" class="flex items-center gap-3 text-gray-500 hover:text-violet-600 text-sm px-4 py-2">
-          ← Volver al sitio
-        </NuxtLink>
-      </div>
-    </aside>
+    <AdminSidebar />
 
     <!-- Main -->
     <main class="md:ml-64 flex-1 p-6 md:p-10 space-y-8">
       <header class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div class="flex items-center gap-2 text-violet-600 mb-1">
-            <NuxtLink to="/admin" class="text-sm hover:underline">← Eventos</NuxtLink>
+            <NuxtLink to="/admin" class="text-sm hover:underline"><Icon name="mdi:arrow-left" class="w-4 h-4" /> Eventos</NuxtLink>
           </div>
           <h1 class="text-3xl font-bold text-gray-900">
             Inscritos: {{ eventoNombre }}
@@ -69,7 +51,9 @@ async function eliminar(personaId: number) {
       <!-- Loading / Empty -->
       <div v-if="pending" class="text-center py-10 text-gray-400">Cargando inscritos...</div>
       <div v-else-if="!inscritos?.length" class="text-center py-16 bg-white rounded-xl border border-dashed border-gray-200">
-        <div class="text-5xl mb-4">👤</div>
+        <div class="text-5xl mb-4">
+          <Icon name="mdi:account" class="w-16 h-16 text-gray-300" />
+        </div>
         <h3 class="text-xl font-bold text-gray-700">No hay inscritos aún</h3>
         <p class="text-gray-400 mt-1">Cuando alguien se registre aparecerá aquí.</p>
       </div>
@@ -101,7 +85,7 @@ async function eliminar(personaId: number) {
                     @click="eliminar(persona.id)"
                     class="text-red-500 border border-red-200 px-3 py-2 rounded-lg text-xs font-semibold hover:bg-red-500 hover:text-white transition flex items-center gap-1 ml-auto"
                   >
-                    🗑️ Eliminar Inscripción
+                    <Icon name="mdi:trash-can" class="w-4 h-4" /> <div class="text-sm">Eliminar Inscripción</div>
                   </button>
                 </td>
               </tr>

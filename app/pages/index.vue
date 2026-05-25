@@ -52,29 +52,30 @@ function formatFecha(fecha: string) {
               :alt="evento.nombre"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div v-else class="w-full h-full flex items-center justify-center text-5xl text-gray-300">📷</div>
+            <div v-else class="w-full h-full flex items-center justify-center text-5xl text-gray-300">
+              <Icon name="mdi:image-off" class="w-8 h-8 text-gray-300" />
+            </div>
           </div>
 
           <!-- Contenido -->
           <div class="p-6 flex-1 flex flex-col">
-            <!-- FIX 1: nombre del evento -->
             <h3 class="text-xl font-bold text-gray-900 mb-3">{{ evento.nombre }}</h3>
 
             <div class="space-y-2 mb-6 text-sm text-gray-500">
               <div class="flex items-center gap-2">
-                <span>📅</span>
+                <Icon name="mdi:calendar" class="w-5 h-5 text-violet-600" />
                 <span>{{ formatFecha(evento.fecha) }}</span>
               </div>
               <div class="flex items-center gap-2">
-                <span>📍</span>
+                <Icon name="mdi:map-marker" class="w-5 h-5 text-violet-600" />
                 <span>{{ evento.lugar }}</span>
               </div>
               <div class="flex items-center gap-2">
-                <span>💰</span>
+                <Icon name="mdi:currency-usd" class="w-5 h-5 text-violet-600" />
                 <span>{{ evento.valor === 0 ? 'Gratis' : `$${evento.valor.toLocaleString()}` }}</span>
               </div>
               <div class="flex items-center gap-2 text-indigo-600 font-semibold">
-                <span>👥</span>
+                <Icon name="mdi:account-group" class="w-5 h-5 text-violet-600" />
                 <span>{{ evento.personas?.length ?? 0 }} Inscritos</span>
               </div>
             </div>

@@ -56,9 +56,7 @@ async function guardar() {
         <span class="flex items-center gap-3 bg-violet-600 text-white rounded-xl px-4 py-3 font-semibold text-sm">
           📅 Gestión de Eventos
         </span>
-        <NuxtLink to="/admin/inscritos/seleccionar" class="flex items-center gap-3 text-gray-600 hover:bg-white rounded-xl px-4 py-3 font-semibold text-sm transition-all">
-          👥 Ver Inscritos
-        </NuxtLink>
+        
       </nav>
       <div class="border-t border-gray-200 pt-4">
         <NuxtLink to="/" class="flex items-center gap-3 text-gray-500 hover:text-violet-600 text-sm px-4 py-2">

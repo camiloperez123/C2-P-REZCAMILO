@@ -78,5 +78,8 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 Nomenclatura de  commits:
 - feat: para nuevas funcionalidades
 - hotfix: para corrección de errores
+- refactor: para cambios en el código que no añaden funcionalidades ni corrigen errores, pero mejoran la estructura o legibilidad
+- endpoint: para cambios relacionados con los endpoints de la API
+- prisma: para cambios relacionados con el ORM Prisma, migraciones, modelos, etc.   
 - docs: para cambios en la documentación
 - gen: para cambios generales que no encajan en las otras categorías

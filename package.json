@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "2.2.2",
     "@nuxt/ui": "^4.7.1",
     "@prisma/adapter-mariadb": "^7.8.0",
     "@prisma/client": "^7.8.0",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.8.0",
-    "prisma": "^7.8.0"
+    "prisma": "^7.8.0",
+    "typescript": "^6.0.3"
   }
 }

@@ -592,7 +592,6 @@ export const PersonaScalarFieldEnum = {
   id: 'id',
   nombre: 'nombre',
   apellido: 'apellido',
-  email: 'email',
   eventoId: 'eventoId'
 } as const
 
@@ -626,8 +625,7 @@ export type EventoOrderByRelevanceFieldEnum = (typeof EventoOrderByRelevanceFiel
 
 export const PersonaOrderByRelevanceFieldEnum = {
   nombre: 'nombre',
-  apellido: 'apellido',
-  email: 'email'
+  apellido: 'apellido'
 } as const
 
 export type PersonaOrderByRelevanceFieldEnum = (typeof PersonaOrderByRelevanceFieldEnum)[keyof typeof PersonaOrderByRelevanceFieldEnum]

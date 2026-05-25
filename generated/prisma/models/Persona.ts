@@ -40,7 +40,6 @@ export type PersonaMinAggregateOutputType = {
   id: number | null
   nombre: string | null
   apellido: string | null
-  email: string | null
   eventoId: number | null
 }
 
@@ -48,7 +47,6 @@ export type PersonaMaxAggregateOutputType = {
   id: number | null
   nombre: string | null
   apellido: string | null
-  email: string | null
   eventoId: number | null
 }
 
@@ -56,7 +54,6 @@ export type PersonaCountAggregateOutputType = {
   id: number
   nombre: number
   apellido: number
-  email: number
   eventoId: number
   _all: number
 }
@@ -76,7 +73,6 @@ export type PersonaMinAggregateInputType = {
   id?: true
   nombre?: true
   apellido?: true
-  email?: true
   eventoId?: true
 }
 
@@ -84,7 +80,6 @@ export type PersonaMaxAggregateInputType = {
   id?: true
   nombre?: true
   apellido?: true
-  email?: true
   eventoId?: true
 }
 
@@ -92,7 +87,6 @@ export type PersonaCountAggregateInputType = {
   id?: true
   nombre?: true
   apellido?: true
-  email?: true
   eventoId?: true
   _all?: true
 }
@@ -187,7 +181,6 @@ export type PersonaGroupByOutputType = {
   id: number
   nombre: string
   apellido: string
-  email: string
   eventoId: number
   _count: PersonaCountAggregateOutputType | null
   _avg: PersonaAvgAggregateOutputType | null
@@ -218,7 +211,6 @@ export type PersonaWhereInput = {
   id?: Prisma.IntFilter<"Persona"> | number
   nombre?: Prisma.StringFilter<"Persona"> | string
   apellido?: Prisma.StringFilter<"Persona"> | string
-  email?: Prisma.StringFilter<"Persona"> | string
   eventoId?: Prisma.IntFilter<"Persona"> | number
   eventos?: Prisma.XOR<Prisma.EventoScalarRelationFilter, Prisma.EventoWhereInput>
 }
@@ -227,7 +219,6 @@ export type PersonaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nombre?: Prisma.SortOrder
   apellido?: Prisma.SortOrder
-  email?: Prisma.SortOrder
   eventoId?: Prisma.SortOrder
   eventos?: Prisma.EventoOrderByWithRelationInput
   _relevance?: Prisma.PersonaOrderByRelevanceInput
@@ -235,7 +226,6 @@ export type PersonaOrderByWithRelationInput = {
 
 export type PersonaWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  email?: string
   AND?: Prisma.PersonaWhereInput | Prisma.PersonaWhereInput[]
   OR?: Prisma.PersonaWhereInput[]
   NOT?: Prisma.PersonaWhereInput | Prisma.PersonaWhereInput[]
@@ -243,13 +233,12 @@ export type PersonaWhereUniqueInput = Prisma.AtLeast<{
   apellido?: Prisma.StringFilter<"Persona"> | string
   eventoId?: Prisma.IntFilter<"Persona"> | number
   eventos?: Prisma.XOR<Prisma.EventoScalarRelationFilter, Prisma.EventoWhereInput>
-}, "id" | "email">
+}, "id">
 
 export type PersonaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nombre?: Prisma.SortOrder
   apellido?: Prisma.SortOrder
-  email?: Prisma.SortOrder
   eventoId?: Prisma.SortOrder
   _count?: Prisma.PersonaCountOrderByAggregateInput
   _avg?: Prisma.PersonaAvgOrderByAggregateInput
@@ -265,14 +254,12 @@ export type PersonaScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Persona"> | number
   nombre?: Prisma.StringWithAggregatesFilter<"Persona"> | string
   apellido?: Prisma.StringWithAggregatesFilter<"Persona"> | string
-  email?: Prisma.StringWithAggregatesFilter<"Persona"> | string
   eventoId?: Prisma.IntWithAggregatesFilter<"Persona"> | number
 }
 
 export type PersonaCreateInput = {
   nombre: string
   apellido: string
-  email: string
   eventos: Prisma.EventoCreateNestedOneWithoutPersonasInput
 }
 
@@ -280,14 +267,12 @@ export type PersonaUncheckedCreateInput = {
   id?: number
   nombre: string
   apellido: string
-  email: string
   eventoId: number
 }
 
 export type PersonaUpdateInput = {
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
   eventos?: Prisma.EventoUpdateOneRequiredWithoutPersonasNestedInput
 }
 
@@ -295,7 +280,6 @@ export type PersonaUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
   eventoId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
@@ -303,21 +287,18 @@ export type PersonaCreateManyInput = {
   id?: number
   nombre: string
   apellido: string
-  email: string
   eventoId: number
 }
 
 export type PersonaUpdateManyMutationInput = {
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PersonaUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
   eventoId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
@@ -341,7 +322,6 @@ export type PersonaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nombre?: Prisma.SortOrder
   apellido?: Prisma.SortOrder
-  email?: Prisma.SortOrder
   eventoId?: Prisma.SortOrder
 }
 
@@ -354,7 +334,6 @@ export type PersonaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nombre?: Prisma.SortOrder
   apellido?: Prisma.SortOrder
-  email?: Prisma.SortOrder
   eventoId?: Prisma.SortOrder
 }
 
@@ -362,7 +341,6 @@ export type PersonaMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nombre?: Prisma.SortOrder
   apellido?: Prisma.SortOrder
-  email?: Prisma.SortOrder
   eventoId?: Prisma.SortOrder
 }
 
@@ -416,14 +394,12 @@ export type PersonaUncheckedUpdateManyWithoutEventosNestedInput = {
 export type PersonaCreateWithoutEventosInput = {
   nombre: string
   apellido: string
-  email: string
 }
 
 export type PersonaUncheckedCreateWithoutEventosInput = {
   id?: number
   nombre: string
   apellido: string
-  email: string
 }
 
 export type PersonaCreateOrConnectWithoutEventosInput = {
@@ -459,7 +435,6 @@ export type PersonaScalarWhereInput = {
   id?: Prisma.IntFilter<"Persona"> | number
   nombre?: Prisma.StringFilter<"Persona"> | string
   apellido?: Prisma.StringFilter<"Persona"> | string
-  email?: Prisma.StringFilter<"Persona"> | string
   eventoId?: Prisma.IntFilter<"Persona"> | number
 }
 
@@ -467,27 +442,23 @@ export type PersonaCreateManyEventosInput = {
   id?: number
   nombre: string
   apellido: string
-  email: string
 }
 
 export type PersonaUpdateWithoutEventosInput = {
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PersonaUncheckedUpdateWithoutEventosInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PersonaUncheckedUpdateManyWithoutEventosInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nombre?: Prisma.StringFieldUpdateOperationsInput | string
   apellido?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -496,7 +467,6 @@ export type PersonaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   nombre?: boolean
   apellido?: boolean
-  email?: boolean
   eventoId?: boolean
   eventos?: boolean | Prisma.EventoDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["persona"]>
@@ -507,11 +477,10 @@ export type PersonaSelectScalar = {
   id?: boolean
   nombre?: boolean
   apellido?: boolean
-  email?: boolean
   eventoId?: boolean
 }
 
-export type PersonaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nombre" | "apellido" | "email" | "eventoId", ExtArgs["result"]["persona"]>
+export type PersonaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nombre" | "apellido" | "eventoId", ExtArgs["result"]["persona"]>
 export type PersonaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   eventos?: boolean | Prisma.EventoDefaultArgs<ExtArgs>
 }
@@ -525,7 +494,6 @@ export type $PersonaPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: number
     nombre: string
     apellido: string
-    email: string
     eventoId: number
   }, ExtArgs["result"]["persona"]>
   composites: {}
@@ -900,7 +868,6 @@ export interface PersonaFieldRefs {
   readonly id: Prisma.FieldRef<"Persona", 'Int'>
   readonly nombre: Prisma.FieldRef<"Persona", 'String'>
   readonly apellido: Prisma.FieldRef<"Persona", 'String'>
-  readonly email: Prisma.FieldRef<"Persona", 'String'>
   readonly eventoId: Prisma.FieldRef<"Persona", 'Int'>
 }
     
